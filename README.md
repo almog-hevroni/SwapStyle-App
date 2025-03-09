@@ -61,11 +61,20 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ### 🔑 Login Screen
 <p align="center">
   <img src="photos/login_screen.png" alt="Login Screen" width="250">
-</p>  
+</p>
 
-| Screen | Description |
-|--------|------------|
-| <p align="center"><img src="photos/home_screen.png" alt="Home Screen" width="250"></p> | **🏠 Home Screen**<br> Browse available clothing items.<br> 🔹 View **all listed items** from different users.<br> 🔹 Use the **search bar & filters** to find specific items.<br> 🔹 Click an item for **details & swap options**. |
+### 🏠 Home Screen  
+<div style="display: flex; align-items: center;">
+  <div style="flex: 1;">
+    The **Home Screen** allows users to browse available clothing items.  
+    🔹 View **all listed items** from different users.  
+    🔹 Use the **search bar & filters** to find specific items.  
+    🔹 Click on an item to see **detailed information & swap options**.  
+  </div>
+  <div style="flex: 1; text-align: right;">
+    <img src="photos/home_screen.png" alt="Home Screen" width="250">
+  </div>
+</div>
 
 
 ## 📂 Project Structure
