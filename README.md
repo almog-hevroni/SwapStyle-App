@@ -5,8 +5,7 @@
 </p>
 
 ## 📌 Introduction
-SwapStyle is a modern and user-friendly Android application that allows users to exchange clothing items effortlessly.  
-Users can upload items, browse available clothes from others, send swap offers, and finalize exchanges.
+SwapStyle is a modern Android application that enables users to swap clothing items with others in their community. The app promotes sustainable fashion by encouraging reuse rather than disposal of clothing items, creating a circular economy for fashion enthusiasts.
 
 This application leverages **Firebase Authentication, Firestore Database, and Firebase Storage** to manage users, items, and swap offers efficiently.
 
