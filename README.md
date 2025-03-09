@@ -23,6 +23,7 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 • **Categorized browsing** for easy discovery (Men, Women, Kids, Accessories).  
 • **Favorite items** to save them for later.  
 • **Advanced search** for filtering by title, brand, category, or size.
+• **Delete items** that are no longer available for swapping
 
 ### 🔄 Swap System
 • **Send swap offers** for available items.  
@@ -68,25 +69,30 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 │   │       │       └── views/                # Custom view implementations
 │   │       │
 │   │       ├── res/                          # Android resources
-│   │       │   ├── drawable/                 # Images, icons, and drawable XML files
-│   │       │   ├── layout/                   # XML layout files for activities and fragments
-│   │       │   ├── menu/                     # Menu definitions
-│   │       │   ├── navigation/               # Navigation graph configurations
-│   │       │   ├── raw/                      # Raw resource files (animations, etc.)
-│   │       │   ├── values/                   # Strings, colors, styles, and dimensions
-│   │       │   └── xml/                      # Other XML configuration files
-│   │       │
-│   │       └── AndroidManifest.xml           # App configuration and permissions
+│   │       └── AndroidManifest.xml           
 │   │
-│   ├── build.gradle.kts                      # Module-level build configuration
-│   └── google-services.json                  # Firebase configuration
+│   ├── build.gradle.kts                      
+│   └── google-services.json                  
 │
-├── gradle/                                   # Gradle wrapper files
-├── build.gradle.kts                          # Project-level build configuration
-└── README.md                                 # Project documentation
+├── gradle/                                   
+├── build.gradle.kts                          
+└── README.md                                 
 ```
 
+## 🏗️ Architecture
 
+- **Model:** Data classes representing entities like `ClothingItem`, `User`, `SwapOffer`.
+- **Repository:** Data access layer handling communication with Firebase.
+- **UI:** Activities and Fragments handling user interaction.
+- **Utilities:** Helper classes for common functionality.
+
+## 🔐 Permissions
+
+- **Internet access**
+- **Camera access**
+- **Location access**
+- **Storage access (for photos)**
+- 
 ## 🔧 Tech Stack
 
 - **Programming Language:** Kotlin
