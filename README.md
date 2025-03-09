@@ -14,26 +14,26 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ## 🚀 Features
 
 ### 🔹 User Authentication
-✔ **Sign Up / Login** with Firebase Authentication.  
-✔ **Password Reset** for recovering accounts.  
-✔ **Profile Management** including profile picture updates.
+• **Sign Up / Login** with Firebase Authentication.  
+• **Password Reset** for recovering accounts.  
+• **Profile Management** including profile picture updates.
 
 ### 🔹 Clothing Management
-✔ **Upload clothing items** with images, descriptions, and size details.  
-✔ **Categorized browsing** for easy discovery (Men, Women, Kids, Accessories).  
-✔ **Favorite items** to save them for later.  
-✔ **Advanced search** for filtering by title, brand, category, or size.
+• **Upload clothing items** with images, descriptions, and size details.  
+• **Categorized browsing** for easy discovery (Men, Women, Kids, Accessories).  
+• **Favorite items** to save them for later.  
+• **Advanced search** for filtering by title, brand, category, or size.
 
 ### 🔹 Swap System
-✔ **Send swap offers** for available items.  
-✔ **Set preferred swap locations & time slots.**  
-✔ **Real-time notifications** for accepted/rejected offers.  
-✔ **Swap history tracking** for completed exchanges.
+• **Send swap offers** for available items.  
+• **Set preferred swap locations & time slots.**  
+• **Real-time notifications** for accepted/rejected offers.  
+• **Swap history tracking** for completed exchanges.
 
 ### 🔹 UI/UX Enhancements
-✔ **Smooth animations & transitions** using `AnimationHelper`.  
-✔ **Image picker & cropper** for optimized uploads.  
-✔ **Google Maps API** for location-based swapping.
+• **Smooth animations & transitions** using `AnimationHelper`.  
+• **Image picker & cropper** for optimized uploads.  
+• **Google Maps API** for location-based swapping.
 
 ---
 
