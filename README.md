@@ -66,17 +66,18 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ### 🏠 Home Screen
 <table>
   <tr>
-    <td width="60%">
+    <td width="60%" style="vertical-align: top;">
       <strong>The Home Screen allows users to browse available clothing items.</strong><br><br>
       🔹 View <strong>all listed items</strong> from different users.<br>
       🔹 Use the <strong>search bar & filters</strong> to find specific items.<br>
       🔹 Click on an item to see <strong>detailed information & swap options</strong>.
     </td>
-    <td width="40%">
+    <td width="40%" style="text-align: right;">
       <img src="photos/home_screen.png" alt="Home Screen" width="250">
     </td>
   </tr>
 </table>
+
 
 
 ## 📂 Project Structure
