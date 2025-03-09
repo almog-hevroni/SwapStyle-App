@@ -1,4 +1,6 @@
-# 👗 SwapStyle - Clothing Swap App [app_logo](photos/app_logo.png)
+# 👗 SwapStyle - Clothing Swap App 
+
+[app_logo](photos/app_logo.png)
 
 📌 **Introduction**  
 SwapStyle is a modern and user-friendly Android application that allows users to exchange clothing items effortlessly.  
