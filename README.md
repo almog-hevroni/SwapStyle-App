@@ -1,4 +1,4 @@
-# 👗 SwapStyle - Clothing Swap App 
+# SwapStyle - Clothing Swap App 
 
 <p align="center">
   <img src="photos/app_logo.png" alt="SwapStyle Logo" width="150">
@@ -50,19 +50,40 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 
 ---
 
-📂 Project Structure
-📦 swapstyleproject
-┣ 📂 adapters              # RecyclerView adapters for UI components
-┣ 📂 data
-┃ ┣ 📂 repository          # Firebase repository implementations
-┃ ┣ 📂 model               # Data models for items, users, swaps
-┣ 📂 ui
-┃ ┣ 📂 fragments           # Home, Profile, AddItem, etc.
-┃ ┣ 📂 activities          # Login, Register, Swap Offer, etc.
-┣ 📂 utilities             # Helper classes (Image Picker, Animations, Location Utils)
-┣ 📜 AndroidManifest.xml   # Application configuration & permissions
-┣ 📜 build.gradle          # Dependencies & project configuration
-┣ 📜 README.md             # Project documentation
+## 📂 Project Structure
+SwapStyleProject/
+│
+├── app/
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/
+│   │       │   └── com.example.swapstyleproject/
+│   │       │       ├── adapters/             # RecyclerView adapters for displaying data
+│   │       │       ├── data/                 # Data layer of the application
+│   │       │       │   ├── repository/       # Firebase repository implementations
+│   │       │       │   └── model/            # Data classes for items, users, swaps
+│   │       │       ├── fragments/            # UI fragments for main screens
+│   │       │       ├── ui/                   # Additional UI components
+│   │       │       ├── utilities/            # Helper classes and utility functions
+│   │       │       └── views/                # Custom view implementations
+│   │       │
+│   │       ├── res/                          # Android resources
+│   │       │   ├── drawable/                 # Images, icons, and drawable XML files
+│   │       │   ├── layout/                   # XML layout files for activities and fragments
+│   │       │   ├── menu/                     # Menu definitions
+│   │       │   ├── navigation/               # Navigation graph configurations
+│   │       │   ├── raw/                      # Raw resource files (animations, etc.)
+│   │       │   ├── values/                   # Strings, colors, styles, and dimensions
+│   │       │   └── xml/                      # Other XML configuration files
+│   │       │
+│   │       └── AndroidManifest.xml           # App configuration and permissions
+│   │
+│   ├── build.gradle.kts                      # Module-level build configuration
+│   └── google-services.json                  # Firebase configuration
+│
+├── gradle/                                   # Gradle wrapper files
+├── build.gradle.kts                          # Project-level build configuration
+└── README.md                                 # Project documentation
 
 
 ## 🔧 Tech Stack
