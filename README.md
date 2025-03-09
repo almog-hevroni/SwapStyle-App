@@ -52,38 +52,25 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 
 ## 📂 Project Structure
 SwapStyleProject/
-│
-├── app/
-│   ├── src/
-│   │   └── main/
-│   │       ├── java/
-│   │       │   └── com.example.swapstyleproject/
-│   │       │       ├── adapters/             # RecyclerView adapters for displaying data
-│   │       │       ├── data/                 # Data layer of the application
-│   │       │       │   ├── repository/       # Firebase repository implementations
-│   │       │       │   └── model/            # Data classes for items, users, swaps
-│   │       │       ├── fragments/            # UI fragments for main screens
-│   │       │       ├── ui/                   # Additional UI components
-│   │       │       ├── utilities/            # Helper classes and utility functions
-│   │       │       └── views/                # Custom view implementations
-│   │       │
-│   │       ├── res/                          # Android resources
-│   │       │   ├── drawable/                 # Images, icons, and drawable XML files
-│   │       │   ├── layout/                   # XML layout files for activities and fragments
-│   │       │   ├── menu/                     # Menu definitions
-│   │       │   ├── navigation/               # Navigation graph configurations
-│   │       │   ├── raw/                      # Raw resource files (animations, etc.)
-│   │       │   ├── values/                   # Strings, colors, styles, and dimensions
-│   │       │   └── xml/                      # Other XML configuration files
-│   │       │
-│   │       └── AndroidManifest.xml           # App configuration and permissions
-│   │
-│   ├── build.gradle.kts                      # Module-level build configuration
-│   └── google-services.json                  # Firebase configuration
-│
-├── gradle/                                   # Gradle wrapper files
-├── build.gradle.kts                          # Project-level build configuration
-└── README.md                                 # Project documentation
+├── app/src/main/
+│   ├── java/com.example.swapstyleproject/
+│   │   ├── adapters/                # RecyclerView adapters
+│   │   ├── data/                    # Data layer
+│   │   │   ├── repository/          # Firebase repositories
+│   │   │   └── model/               # Data classes
+│   │   ├── fragments/               # UI fragments
+│   │   ├── ui/                      # UI components
+│   │   ├── utilities/               # Helper classes
+│   │   └── views/                   # Custom views
+│   ├── res/                         # Resources
+│   │   ├── drawable/                # Images & drawables
+│   │   ├── layout/                  # Layout files
+│   │   ├── menu/                    # Menu files
+│   │   ├── values/                  # Strings & colors
+│   │   └── xml/                     # XML configs
+│   └── AndroidManifest.xml          # App configuration
+├── gradle/                          # Gradle files
+└── build.gradle.kts                 # Build config
 
 
 ## 🔧 Tech Stack
