@@ -137,6 +137,21 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
   </tr>
 </table>
 
+### 🏠 Item Details (Owner)
+<table>
+  <tr>
+    <td style="text-align: left; vertical-align: top; width: 60%;">
+      <b>The Item Details Screen (Owner) lets the item owner manage swap requests.</b><br><br>
+      🔹 See <b>who is interested</b> in the item.<br>
+      🔹 Accept or reject incoming <b>swap offers</b>.<br>
+      🔹 Remove the item if it is no longer available.
+    </td>
+    <td style="text-align: right; width: 40%;">
+      <img src="photos/item_details_owner.png" alt="Item Details for Owner" width="250">
+    </td>
+  </tr>
+</table>
+
 
 
 ## 📂 Project Structure
