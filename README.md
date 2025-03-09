@@ -93,6 +93,21 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
   </tr>
 </table>
 
+### 👤 Profile Screen
+<table>
+  <tr>
+    <td style="text-align: left; vertical-align: top; width: 60%;">
+      <b>The Profile Screen displays user information and swap history.</b><br><br>
+      🔹 View your <b>uploaded items</b> and manage them.<br>
+      🔹 Check <b>sent & received swap offers</b>.<br>
+      🔹 Edit your <b>profile picture & details</b>.
+    </td>
+    <td style="text-align: right; width: 40%;">
+      <img src="photos/profile_screen.png" alt="Profile Screen" width="250">
+    </td>
+  </tr>
+</table>
+
 
 
 ## 📂 Project Structure
