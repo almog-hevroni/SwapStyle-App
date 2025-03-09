@@ -23,7 +23,7 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 • **Categorized browsing** for easy discovery (Men, Women, Kids, Accessories).  
 • **Favorite items** to save them for later.  
 • **Advanced search** for filtering by title, brand, category, or size.
-• **Delete items** that are no longer available for swapping
+• **Delete items** that are no longer available for swapping.
 
 ### 🔄 Swap System
 • **Send swap offers** for available items.  
