@@ -54,25 +54,32 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ## 📸 Screens
 
 ### 👋 Welcome Screen
+
 <p align="center">
   <img src="photos/welcome_screen.png" alt="Welcome Screen" width="250">
 </p>  
 
 ### 🔑 Login Screen
+
 <p align="center">
   <img src="photos/login_screen.png" alt="Login Screen" width="250">
 </p>
 
 ### 🏠 Home Screen
+
+## 📸 Screenshots
+
+### 🏠 Home Screen
+
 <table>
   <tr>
-    <td width="60%" style="vertical-align: top;">
-      <strong>The Home Screen allows users to browse available clothing items.</strong><br><br>
-      🔹 View <strong>all listed items</strong> from different users.<br>
-      🔹 Use the <strong>search bar & filters</strong> to find specific items.<br>
-      🔹 Click on an item to see <strong>detailed information & swap options</strong>.
+    <td style="text-align: left; vertical-align: top; width: 60%;">
+      <b>The Home Screen allows users to browse available clothing items.</b><br><br>
+      🔹 View <b>all listed items</b> from different users.<br>
+      🔹 Use the <b>search bar & filters</b> to find specific items.<br>
+      🔹 Click on an item to see <b>detailed information & swap options</b>.
     </td>
-    <td width="40%" style="text-align: right;">
+    <td style="text-align: right; width: 40%;">
       <img src="photos/home_screen.png" alt="Home Screen" width="250">
     </td>
   </tr>
