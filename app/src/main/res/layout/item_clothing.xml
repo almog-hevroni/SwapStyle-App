@@ -1,0 +1,118 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="@color/white">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/itemImageViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:bottomLeftRadius="16dp"
+                android:bottomRightRadius="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/favoriteButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="8dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            app:iconPadding="0dp"
+            app:iconGravity="textStart"
+            app:cornerRadius="20dp"
+            app:icon="@drawable/ic_heart_outline"
+            android:backgroundTint="@color/white"
+            android:checkable="true"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/imageIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="8dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:tabPaddingStart="4dp"
+            app:tabPaddingEnd="4dp"
+            app:tabMinWidth="8dp"
+            app:tabMaxWidth="8dp"/>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/itemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="name"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:fontFamily="sans-serif"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/itemDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemTitle"
+            android:layout_marginTop="4dp"
+            android:text="מותג | מידה | קטגוריה"
+            android:textSize="12sp"
+            android:textColor="@android:color/darker_gray" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/statusChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemDetails"
+            android:layout_marginTop="4dp"
+            android:text="status"
+            android:textSize="10sp"
+            android:textAlignment="center"
+            app:chipMinHeight="24dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/moreOptionsButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_more_vert"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:visibility="gone"/>
+
+</com.google.android.material.card.MaterialCardView>

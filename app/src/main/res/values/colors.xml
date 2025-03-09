@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="brown">#EF8B6B</color>
+    <color name="gray">#d9d9d9</color>
+    <color name="tool_bar_color">#7c7061</color>
+    <color name="bottom_nav_selected_background">#80FFFFFF</color>
+    <color name="heart_white">#FFFFFF</color>
+    <color name="heart_yellow">#FFD700</color>
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+    <color name="card_selected">#10B0B0B0</color>
+    <color name="transparent">#33FFFFFF</color>
+
+</resources>

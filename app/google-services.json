@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "189314785275",
+    "project_id": "swapstyle-ac78b",
+    "storage_bucket": "swapstyle-ac78b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189314785275:android:3ae7a35582a5e8408c355e",
+        "android_client_info": {
+          "package_name": "com.example.swapstyleproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189314785275-rfpij1d0naldek7gefk2estnipfh2j3k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.swapstyleproject",
+            "certificate_hash": "e1840b765e9794f185d4b31e376b95ca3cda569d"
+          }
+        },
+        {
+          "client_id": "189314785275-8h16fl0qnva9dbcmr89oee6g27u5tg5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxjg_6FOOJh6CEUoJ-8wsVvdaNMllBlpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189314785275-8h16fl0qnva9dbcmr89oee6g27u5tg5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

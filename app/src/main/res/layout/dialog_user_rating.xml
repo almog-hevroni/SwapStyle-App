@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/dialog_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rate User Experience"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reliability"
+        android:textSize="16sp"/>
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/reliabilityRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:stepSize="1"
+        android:rating="0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Communication"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/communicationRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:stepSize="1"
+        android:rating="0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Item Quality"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/itemQualityRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:stepSize="1"
+        android:rating="0"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitRatingButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit Rating"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/tool_bar_color"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

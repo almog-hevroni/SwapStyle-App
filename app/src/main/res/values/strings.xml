@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Swap Style Project</string>
+    <string name="default_web_client_id">189314785275-rfpij1d0naldek7gefk2estnipfh2j3k.apps.googleusercontent.com</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="menu_button">Menu</string>
+    <string name="category_tabs">Category Selection</string>
+    <string name="all_items">Show All Items</string>
+    <string name="men_items">Show Men\'s Items</string>
+    <string name="women_items">Show Women\'s Items</string>
+    <string name="kids_items">Show Kids\' Items</string>
+    <string name="google_maps_key">AIzaSyDXd6d4rSjLkzYs3y-5200o_L4qQS2o5U8</string>
+</resources>

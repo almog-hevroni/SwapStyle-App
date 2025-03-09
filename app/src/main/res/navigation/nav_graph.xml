@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.swapstyleproject.fragments.HomeFragment"
+        android:label="Home" >
+</fragment>
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.example.swapstyleproject.ui.add.AddItemFragment"
+        android:label="Add Item" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.swapstyleproject.fragments.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.swapstyleproject.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+
+</navigation>
