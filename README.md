@@ -51,7 +51,7 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ---
 
 ## 📂 Project Structure
-SwapStyleProject/
+```SwapStyleProject/
 │
 ├── app/
 │   ├── src/
@@ -84,6 +84,7 @@ SwapStyleProject/
 ├── gradle/                                   # Gradle wrapper files
 ├── build.gradle.kts                          # Project-level build configuration
 └── README.md                                 # Project documentation
+```
 
 
 ## 🔧 Tech Stack
