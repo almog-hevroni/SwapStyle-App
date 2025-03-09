@@ -1,5 +1,8 @@
 # 👗 SwapStyle - Clothing Swap App 
 
+<p align="center">
+  <img src="photos/app_logo.png" alt="SwapStyle Logo" width="150">
+</p>
 ![app_logo](photos/app_logo.png)
 
 📌 **Introduction**  
