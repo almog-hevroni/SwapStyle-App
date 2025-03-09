@@ -218,9 +218,11 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ## Setup Instructions
 
 1. Clone the repository 
-```git clone https://github.com/almog-hevroni/SwapStyle-App.git```
+    ```sh 
+        git clone https://github.com/almog-hevroni/SwapStyle-App.git
+    ```
 2. Open the project in Android Studio
-3. Open the file res/values/strings.xml and add the API key::
+3. Open the file res/values/strings.xml and add the API key:
    ```xml
         <string name="google_maps_key">YOUR_API_KEY</string>
    ```
