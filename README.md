@@ -152,6 +152,21 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
   </tr>
 </table>
 
+### ⏳ Item In Process Screen
+<table>
+  <tr>
+    <td style="text-align: left; vertical-align: top; width: 60%;">
+      <b>The Item In Process Screen allows users to track an ongoing swap.</b><br><br>
+      🔹 View the <b>current status</b> of an item being swapped.<br>
+      🔹 See details of the <b>swap partner</b> and meeting arrangements.<br>
+      🔹 Cancel the swap if necessary before it’s completed.
+    </td>
+    <td style="text-align: right; width: 40%;">
+      <img src="photos/item_in_process.png" alt="Item In Process Screen" width="250">
+    </td>
+  </tr>
+</table>
+
 
 
 ## 📂 Project Structure
