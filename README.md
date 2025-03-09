@@ -3,7 +3,8 @@
 <p align="center">
   <img src="photos/app_logo.png" alt="SwapStyle Logo" width="150">
 </p>
-📌 **Introduction**  
+
+## 📌 Introduction
 SwapStyle is a modern and user-friendly Android application that allows users to exchange clothing items effortlessly.  
 Users can upload items, browse available clothes from others, send swap offers, and finalize exchanges.
 
