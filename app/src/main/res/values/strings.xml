@@ -8,5 +8,5 @@
     <string name="men_items">Show Men\'s Items</string>
     <string name="women_items">Show Women\'s Items</string>
     <string name="kids_items">Show Kids\' Items</string>
-    <string name="google_maps_key">AIzaSyDXd6d4rSjLkzYs3y-5200o_L4qQS2o5U8</string>
+    <string name="google_maps_key">YOUR_API_KEY</string>
 </resources>
