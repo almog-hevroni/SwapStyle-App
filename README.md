@@ -51,6 +51,14 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 
 ---
 
+## 📸 Screens
+
+### 👋 Welcome Screen
+<p align="center">
+  <img src="photos/welcome_screen.png" alt="Welcome Screen" width="250">
+</p>  
+
+
 ## 📂 Project Structure
 ```SwapStyleProject/
 │
@@ -79,6 +87,8 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 └── README.md                                 
 ```
 
+---
+
 ## 🏗️ Architecture
 
 - **Model:** Data classes representing entities like `ClothingItem`, `User`, `SwapOffer`.
@@ -86,13 +96,17 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 - **UI:** Activities and Fragments handling user interaction.
 - **Utilities:** Helper classes for common functionality.
 
+---
+
 ## 🔐 Permissions
 
 - **Internet access**
 - **Camera access**
 - **Location access**
 - **Storage access (for photos)**
-- 
+
+---
+
 ## 🔧 Tech Stack
 
 - **Programming Language:** Kotlin
