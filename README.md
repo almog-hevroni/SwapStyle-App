@@ -64,7 +64,7 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 </p>
 
 ### 🏠 Home Screen
-| The **Home Screen** allows users to browse available clothing items.<br><br> 🔹 View **all listed items** from different users.<br> 🔹 Use the **search bar & filters** to find specific items.<br> 🔹 Click on an item to see **detailed information & swap options**. | <img src="screenshots/home_screen.png" alt="Home Screen" width="250"> |
+| The **Home Screen** allows users to browse available clothing items.<br><br> 🔹 View **all listed items** from different users.<br> 🔹 Use the **search bar & filters** to find specific items.<br> 🔹 Click on an item to see **detailed information & swap options**. | <img src="photos/home_screen.png" alt="Home Screen" width="250"> |
 
 
 
