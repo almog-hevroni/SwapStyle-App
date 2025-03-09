@@ -122,7 +122,20 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
   </tr>
 </table>
 
-
+### 🔄 Swap Offer Screen
+<table>
+  <tr>
+    <td style="text-align: left; vertical-align: top; width: 60%;">
+      <b>The Swap Offer Screen lets users send swap requests.</b><br><br>
+      🔹 Select an item you want to swap for the displayed item.<br>
+      🔹 Choose a <b>meeting location & time slot</b>.<br>
+      🔹 Send the request and wait for the owner's response.
+    </td>
+    <td style="text-align: right; width: 40%;">
+      <img src="photos/swap_offer_screen.png" alt="Swap Offer Screen" width="250">
+    </td>
+  </tr>
+</table>
 
 
 
