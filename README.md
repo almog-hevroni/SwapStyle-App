@@ -65,19 +65,18 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ┣ 📜 README.md             # Project documentation
 
 
-🔧 Tech Stack
-Programming Language: Kotlin
-UI Components: Jetpack Compose, XML
-Database: Firebase Firestore
-Authentication: Firebase Auth
-Storage: Firebase Storage
-Maps & Location: Google Maps API
-State Management: LiveData, ViewModel
-Asynchronous Operations: Kotlin Coroutines
-💡 Future Enhancements
-🔥 In-app chat system for direct communication between users.
-🏆 Loyalty program to encourage swaps.
-📍 Smart recommendations based on user preferences.
+## 🔧 Tech Stack
+
+- **Programming Language:** Kotlin
+- **UI Components:** Jetpack Compose, XML
+- **Database:** Firebase Firestore
+- **Authentication:** Firebase Auth
+- **Storage:** Firebase Storage
+- **Maps & Location:** Google Maps API
+- **State Management:** LiveData, ViewModel
+- **Asynchronous Operations:** Kotlin Coroutines
+
+
 🎉 Getting Started
 1️⃣ Clone the repository
 git clone https://github.com/yourusername/swapstyle.git
