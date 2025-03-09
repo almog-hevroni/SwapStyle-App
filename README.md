@@ -108,6 +108,22 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
   </tr>
 </table>
 
+### 🛍️ Item Details (Consumer)
+<table>
+  <tr>
+    <td style="text-align: left; vertical-align: top; width: 60%;">
+      <b>The Item Details Screen (Consumer) shows a specific clothing item.</b><br><br>
+      🔹 View <b>item details, images, and owner information</b>.<br>
+      🔹 Click <b>"Propose Swap"</b> to offer one of your items in exchange.
+    </td>
+    <td style="text-align: right; width: 40%;">
+      <img src="photos/item_details_consumer.png" alt="Item Details for Consumer" width="250">
+    </td>
+  </tr>
+</table>
+
+
+
 
 
 ## 📂 Project Structure
