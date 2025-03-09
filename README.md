@@ -54,23 +54,16 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 ## 📸 Screens
 
 ### 👋 Welcome Screen
-
 <p align="center">
   <img src="photos/welcome_screen.png" alt="Welcome Screen" width="250">
 </p>  
 
 ### 🔑 Login Screen
-
 <p align="center">
   <img src="photos/login_screen.png" alt="Login Screen" width="250">
 </p>
 
 ### 🏠 Home Screen
-
-## 📸 Screenshots
-
-### 🏠 Home Screen
-
 <table>
   <tr>
     <td style="text-align: left; vertical-align: top; width: 60%;">
@@ -81,6 +74,21 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
     </td>
     <td style="text-align: right; width: 40%;">
       <img src="photos/home_screen.png" alt="Home Screen" width="250">
+    </td>
+  </tr>
+</table>
+
+### ➕ Add Item Screen
+<table>
+  <tr>
+    <td style="text-align: left; vertical-align: top; width: 60%;">
+      <b>The Add Item Screen lets users upload clothing items for swapping.</b><br><br>
+      🔹 Add <b>photos, title, size, brand, and category</b>.<br>
+      🔹 Set the item’s <b>availability status</b>.<br>
+      🔹 Click "Save" to add it to the marketplace.
+    </td>
+    <td style="text-align: right; width: 40%;">
+      <img src="photos/add_item_screen.png" alt="Add Item Screen" width="250">
     </td>
   </tr>
 </table>
