@@ -19,17 +19,23 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 • **Profile Management** including profile picture updates.
 
 ### 👕 Clothing Management
-• **Upload clothing items** with images, descriptions, and size details.  
-• **Categorized browsing** for easy discovery (Men, Women, Kids, Accessories).  
-• **Favorite items** to save them for later.  
-• **Advanced search** for filtering by title, brand, category, or size.
-• **Delete items** that are no longer available for swapping.
+- **Upload clothing items** with images, descriptions, and size details.
+- **Categorized browsing** for easy discovery (*Men, Women, Kids, Accessories*).
+- **Favorite items** to save them for later.
+- **Advanced search** for filtering by *title, brand, category, or size*.
+- **Delete items** that are no longer available for swapping.
 
 ### 🔄 Swap System
 • **Send swap offers** for available items.  
 • **Set preferred swap locations & time slots.**  
 • **Real-time notifications** for accepted/rejected offers.  
 • **Swap history tracking** for completed exchanges.
+
+### 🔔 Notifications System
+- **Receive instant notifications** when a swap offer is accepted or rejected.
+- **Get notified** when a new message or update is available regarding a swap.
+- **Mark notifications as read** to keep track of updates.
+- **View all notifications in a dedicated screen** for better organization.
 
 ### 🎨 UI/UX Enhancements
 • **Smooth animations & transitions** using `AnimationHelper`.  
@@ -46,8 +52,9 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 4️⃣ **Browse & Search** → Explore available items by category or keyword.  
 5️⃣ **Send Swap Offers** → Select an item, choose yours for exchange, and propose a location & time.  
 6️⃣ **Offer Acceptance/Rejection** → Receive responses to swap requests.  
-7️⃣ **Finalize Swap** → Meet at the agreed location and exchange items.  
-8️⃣ **Swap History** → View past exchanges in your profile.
+7️⃣ **Real-time Notifications** → Get notified when your swap offer is accepted/rejected.  
+8️⃣ **Finalize Swap** → Meet at the agreed location and exchange items.  
+9️⃣ **Swap History** → View past exchanges in your profile.
 
 ---
 
@@ -166,6 +173,26 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
     </td>
   </tr>
 </table>
+
+### 🔔 Notifications Screen
+<p align="center">  
+  <img src="photos/notifications_screen.png" alt="Notifications Screen" width="250">  
+</p>  
+
+<table>  
+  <tr>  
+    <td style="text-align: left; vertical-align: top; width: 60%;">  
+      <b>The Notifications Screen helps users stay updated on their swap activities.</b><br><br>  
+      🔹 View <b>new swap requests, acceptances, and rejections</b> in real time.<br>  
+      🔹 Mark notifications as <b>read or unread</b> to track updates.<br>  
+      🔹 Keep all swap-related messages in one place.  
+    </td>  
+    <td style="text-align: right; width: 40%;">  
+      <img src="photos/notifications_details.png" alt="Notification Details" width="250">  
+    </td>  
+  </tr>  
+</table>
+
 
 ## 📂 Project Structure
 ```SwapStyleProject/
