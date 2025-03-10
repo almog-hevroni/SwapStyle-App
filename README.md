@@ -175,10 +175,6 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 </table>
 
 ### 🔔 Notifications Screen
-<p align="center">  
-  <img src="photos/notifications_screen.png" alt="Notifications Screen" width="250">  
-</p>  
-
 <table>  
   <tr>  
     <td style="text-align: left; vertical-align: top; width: 60%;">  
@@ -188,7 +184,7 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
       🔹 Keep all swap-related messages in one place.  
     </td>  
     <td style="text-align: right; width: 40%;">  
-      <img src="photos/notifications_details.png" alt="Notification Details" width="250">  
+      <img src="photos/notifications_screen.png" alt="Notifications Screen" width="250">  
     </td>  
   </tr>  
 </table>
