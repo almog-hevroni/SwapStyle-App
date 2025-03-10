@@ -20,10 +20,4 @@
         android:name="com.example.swapstyleproject.fragments.ProfileFragment"
         android:label="Profile" />
 
-    <fragment
-        android:id="@+id/nav_settings"
-        android:name="com.example.swapstyleproject.ui.settings.SettingsFragment"
-        android:label="Settings" />
-
-
 </navigation>

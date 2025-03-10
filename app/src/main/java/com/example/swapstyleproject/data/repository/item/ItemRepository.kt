@@ -19,4 +19,5 @@ interface ItemRepository {
     suspend fun filterItemsNotOffered(items: List<ClothingItem>): List<ClothingItem>
     suspend fun isItemAvailableForSwap(itemId: String): Result<Boolean>
     fun clearProcessedSwaps()
+
 }

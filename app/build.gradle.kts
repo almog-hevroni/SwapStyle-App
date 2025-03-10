@@ -90,4 +90,7 @@ dependencies {
     //lottie
     implementation(libs.lottie)
 
+    // SwipeRefreshLayout
+    implementation(libs.androidx.swiperefreshlayout)
+
 }

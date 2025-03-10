@@ -1,5 +1,7 @@
 package com.example.swapstyleproject.data.repository.base
 
+import com.example.swapstyleproject.data.repository.Notification.NotificationRepository
+import com.example.swapstyleproject.data.repository.Notification.NotificationRepositoryImpl
 import com.example.swapstyleproject.data.repository.auth.AuthRepository
 import com.example.swapstyleproject.data.repository.auth.AuthRepositoryImpl
 import com.example.swapstyleproject.data.repository.user.UserRepository
@@ -19,6 +21,7 @@ interface FirebaseRepository {
     val userRepository: UserRepository
     val itemRepository: ItemRepository
     val swapRepository: SwapRepository
+    val notificationRepository: NotificationRepository
 
     companion object {
         @Volatile
@@ -37,6 +40,8 @@ class FirebaseRepositoryImpl : FirebaseRepository {
     override val userRepository: UserRepository = UserRepositoryImpl()
     override val itemRepository: ItemRepository = ItemRepositoryImpl()
     override val swapRepository: SwapRepository = SwapRepositoryImpl()
+    override val notificationRepository: NotificationRepository = NotificationRepositoryImpl()
+
 }
 
 

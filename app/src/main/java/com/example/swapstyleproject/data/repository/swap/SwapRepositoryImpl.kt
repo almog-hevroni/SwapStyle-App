@@ -1,6 +1,7 @@
 package com.example.swapstyleproject.data.repository.swap
 
 import android.util.Log
+import com.example.swapstyleproject.model.NotificationType
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -56,6 +57,44 @@ class SwapRepositoryImpl : SwapRepository {
             .document(swapId)
             .set(swapOfferData)
             .await()
+
+        // Create notification for item owner
+        try {
+            // Get sender information
+            val senderDoc = firestore.collection("users")
+                .document(currentUserId)
+                .get()
+                .await()
+
+            val senderName = senderDoc.getString("username") ?: "Someone"
+
+            // Create notification
+            val notificationId = UUID.randomUUID().toString()
+            val notificationData = hashMapOf(
+                "id" to notificationId,
+                "userId" to swapOffer.itemOwnerId,
+                "title" to "New Swap Offer",
+                "message" to "You received an offer from $senderName for your ${swapOffer.itemTitle} item. Check your profile to see the details.",
+                "senderName" to senderName,
+                "itemId" to swapOffer.itemId,
+                "itemTitle" to swapOffer.itemTitle,
+                "swapOfferId" to swapId,
+                "type" to "SWAP_OFFER",
+                "isRead" to false,
+                "timestamp" to System.currentTimeMillis()
+            )
+
+            firestore.collection("users")
+                .document(swapOffer.itemOwnerId)
+                .collection("notifications")
+                .document(notificationId)
+                .set(notificationData)
+                .await()
+        } catch (e: Exception) {
+            // If notification creation fails, we still want to create the swap offer
+            // So we just log the error and continue
+            e.printStackTrace()
+        }
 
         swapId
     }
@@ -135,10 +174,12 @@ class SwapRepositoryImpl : SwapRepository {
             throw Exception("Swap offer not found")
         }
 
-        // Get the interested user ID
+        // Get the interested user ID and other details
         val interestedUserId = offerDoc.getString("interestedUserId")
         val itemId = offerDoc.getString("itemId")
+        val itemTitle = offerDoc.getString("itemTitle") ?: "your item"
         val offeredItemId = offerDoc.getString("offeredItemId")
+        val offeredItemTitle = offerDoc.getString("offeredItemTitle") ?: "their item"
 
         if (interestedUserId == null || itemId == null) {
             throw Exception("Interested user ID or Item ID not found")
@@ -166,20 +207,8 @@ class SwapRepositoryImpl : SwapRepository {
                 emptyList()
             }
 
-            // Find suggestions the user has made with this item to others
-            val userSentOffersWithThisItem = if (!offeredItemId.isNullOrEmpty()) {
-                val userSentOffersQuery = firestore.collectionGroup("sent_offers")
-                    .whereEqualTo("offeredItemId", offeredItemId)
-                    .whereEqualTo("status", SwapOfferStatus.PENDING.name)
-                    .whereNotEqualTo("swapId", swapId)
-
-                userSentOffersQuery.get().await().documents
-            } else {
-                emptyList()
-            }
-
             // Combine all offers that need to be rejected
-            val allOffersToReject = ownerOffers.documents + offeredItemOffers + userSentOffersWithThisItem
+            val allOffersToReject = ownerOffers.documents + offeredItemOffers
 
             // Batch update to reject other offers
             val batch = firestore.batch()
@@ -188,6 +217,7 @@ class SwapRepositoryImpl : SwapRepository {
                 val otherSwapId = otherOfferDoc.getString("swapId")
                 val otherInterestedUserId = otherOfferDoc.getString("interestedUserId")
                 val otherItemOwnerId = otherOfferDoc.getString("itemOwnerId")
+                val otherItemTitle = otherOfferDoc.getString("itemTitle") ?: "an item"
 
                 if (otherSwapId != null && otherInterestedUserId != null && otherItemOwnerId != null) {
                     // Update in owner's user_offers collection
@@ -203,6 +233,35 @@ class SwapRepositoryImpl : SwapRepository {
                         .collection("sent_offers")
                         .document(otherSwapId)
                     batch.update(interestedUserOfferRef, "status", SwapOfferStatus.REJECTED.name)
+
+                    // Create rejection notification for other users
+                    try {
+                        val notificationId = UUID.randomUUID().toString()
+
+                        val notificationData = hashMapOf(
+                            "id" to notificationId,
+                            "userId" to otherInterestedUserId,
+                            "title" to "Swap Offer Rejected",
+                            "message" to "Your offer for $otherItemTitle was automatically rejected because the item has been accepted for another swap.",
+                            "senderName" to "",
+                            "itemId" to (otherOfferDoc.getString("itemId") ?: ""),
+                            "itemTitle" to otherItemTitle,
+                            "swapOfferId" to otherSwapId,
+                            "type" to NotificationType.SWAP_REJECTED,
+                            "isRead" to false,
+                            "timestamp" to System.currentTimeMillis()
+                        )
+
+                        val notificationRef = firestore.collection("users")
+                            .document(otherInterestedUserId)
+                            .collection("notifications")
+                            .document(notificationId)
+
+                        batch.set(notificationRef, notificationData)
+                    } catch (e: Exception) {
+                        // Just log the error and continue
+                        e.printStackTrace()
+                    }
                 }
             }
 
@@ -239,6 +298,57 @@ class SwapRepositoryImpl : SwapRepository {
             .document(swapId)
             .update("status", newStatus.name)
             .await()
+
+        // Create notification for the interested user about acceptance or rejection
+        try {
+            // Get owner information
+            val ownerDoc = firestore.collection("users")
+                .document(currentUserId)
+                .get()
+                .await()
+
+            val ownerName = ownerDoc.getString("username") ?: "The owner"
+
+            val notificationId = UUID.randomUUID().toString()
+            val notificationTitle: String
+            val notificationMessage: String
+            val notificationType: NotificationType
+
+            if (newStatus == SwapOfferStatus.ACCEPTED) {
+                notificationTitle = "Swap Offer Accepted"
+                notificationMessage = "$ownerName accepted your offer for $itemTitle. You can now proceed with the swap."
+                notificationType = NotificationType.SWAP_ACCEPTED
+            } else {
+                notificationTitle = "Swap Offer Rejected"
+                notificationMessage = "$ownerName rejected your offer for $itemTitle."
+                notificationType = NotificationType.SWAP_REJECTED
+            }
+
+            val notificationData = hashMapOf(
+                "id" to notificationId,
+                "userId" to interestedUserId,
+                "title" to notificationTitle,
+                "message" to notificationMessage,
+                "senderName" to ownerName,
+                "itemId" to itemId,
+                "itemTitle" to itemTitle,
+                "swapOfferId" to swapId,
+                "type" to notificationType,
+                "isRead" to false,
+                "timestamp" to System.currentTimeMillis()
+            )
+
+            firestore.collection("users")
+                .document(interestedUserId)
+                .collection("notifications")
+                .document(notificationId)
+                .set(notificationData)
+                .await()
+        } catch (e: Exception) {
+            // If notification creation fails, we still want to update the status
+            // So we just log the error and continue
+            e.printStackTrace()
+        }
     }
 
     override suspend fun getSwapOfferById(swapId: String): Result<SwapOffer> = runCatching {

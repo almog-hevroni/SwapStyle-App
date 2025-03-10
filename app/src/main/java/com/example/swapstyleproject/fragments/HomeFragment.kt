@@ -1,5 +1,6 @@
 package com.example.swapstyleproject.fragments
 
+import android.app.Activity
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -31,6 +32,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.swapstyleproject.ItemDetailsConsumerActivity
+import com.example.swapstyleproject.NotificationsActivity
 import com.example.swapstyleproject.data.repository.base.FirebaseRepository
 import com.example.swapstyleproject.model.User
 
@@ -46,10 +48,12 @@ class HomeFragment : Fragment() {
     private lateinit var imagePickerHelper: ImagePickerHelper
 
     private lateinit var itemDetailsLauncher: ActivityResultLauncher<Intent>
+    private lateinit var notificationsLauncher: ActivityResultLauncher<Intent>
 
     private val categories = listOf("See All", "Women", "Men", "Kids", "Accessories")
     private var searchJob: Job? = null
 
+    private var notificationCheckJob: Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -77,10 +81,19 @@ class HomeFragment : Fragment() {
             }
         }
 
+        notificationsLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                checkUnreadNotifications()
+            }
+        }
+
         setupBackgroundColor()
         setupViews()
         loadUserInfo()
         loadItems("See All")
+        checkUnreadNotifications()
     }
 
     //This function allows for an immediate visual update of the favorites state
@@ -108,6 +121,7 @@ class HomeFragment : Fragment() {
         setupSearch()
         setupImagePicker()
         setupEmptyState()
+        setupNotificationButton()
     }
 
     private fun setupToolbar() {
@@ -266,6 +280,50 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun checkUnreadNotifications() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                repository.notificationRepository.getUnreadNotificationsCount()
+                    .onSuccess { count ->
+                        updateNotificationBadge(count)
+                    }
+                    .onFailure { exception ->
+                    }
+
+                // Schedule periodic checks
+                startPeriodicNotificationChecks()
+            } catch (e: Exception) {
+            }
+        }
+    }
+
+    private fun startPeriodicNotificationChecks() {
+        // Cancel any existing job
+        notificationCheckJob?.cancel()
+
+        // Start a new job that checks every 30 seconds
+        notificationCheckJob = viewLifecycleOwner.lifecycleScope.launch {
+            while (true) {
+                delay(30000) // Check every 30 seconds
+                repository.notificationRepository.getUnreadNotificationsCount()
+                    .onSuccess { count ->
+                        updateNotificationBadge(count)
+                    }
+            }
+        }
+    }
+
+    private fun updateNotificationBadge(count: Int) {
+        binding.notificationBadge.apply {
+            if (count > 0) {
+                text = if (count > 99) "99+" else count.toString()
+                visibility = View.VISIBLE
+            } else {
+                visibility = View.GONE
+            }
+        }
+    }
+
     private fun handleFavoriteClick(itemId: String, newFavoriteState: Boolean) {
         viewLifecycleOwner.lifecycleScope.launch {
             val result = if (newFavoriteState) {
@@ -306,6 +364,13 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun setupNotificationButton() {
+        binding.notificationButton.setOnClickListener {
+            val intent = Intent(requireContext(), NotificationsActivity::class.java)
+            notificationsLauncher.launch(intent)
+        }
+    }
+
     private fun showEmptyState() {
         binding.emptyStateLayout.visibility = View.VISIBLE
         binding.itemsRecyclerView.visibility = View.GONE
@@ -325,6 +390,8 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        // Cancel the notification check job
+        notificationCheckJob?.cancel()
         _binding = null
     }
 }

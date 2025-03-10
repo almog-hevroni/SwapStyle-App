@@ -79,6 +79,9 @@
             android:name=".ItemInProcessActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false" />
 
     </application>
 
