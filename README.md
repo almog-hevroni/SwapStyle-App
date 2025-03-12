@@ -265,7 +265,7 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 - **Authentication:** Firebase Auth
 - **Storage:** Firebase Storage
 - **Maps & Location:** Google Maps API
-- **State Management:** LiveData, ViewModel
+- **State Management:** LiveData
 - **Asynchronous Operations:** Kotlin Coroutines
 
 
