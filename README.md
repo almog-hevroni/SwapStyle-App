@@ -58,7 +58,7 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
 
 ---
 
-## 📸 Screens
+## 📱 Screens
 
 ### 👋 Welcome Screen
 <p align="center">
