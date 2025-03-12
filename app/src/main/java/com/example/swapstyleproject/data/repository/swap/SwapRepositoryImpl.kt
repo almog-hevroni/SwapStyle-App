@@ -91,8 +91,6 @@ class SwapRepositoryImpl : SwapRepository {
                 .set(notificationData)
                 .await()
         } catch (e: Exception) {
-            // If notification creation fails, we still want to create the swap offer
-            // So we just log the error and continue
             e.printStackTrace()
         }
 

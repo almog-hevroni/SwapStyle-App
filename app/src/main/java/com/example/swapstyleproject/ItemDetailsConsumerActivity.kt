@@ -150,4 +150,11 @@ class ItemDetailsConsumerActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Refresh item data if needed
+        val itemId = intent.getStringExtra("itemId") ?: return
+        loadItemDetails(itemId)
+    }
+
 }

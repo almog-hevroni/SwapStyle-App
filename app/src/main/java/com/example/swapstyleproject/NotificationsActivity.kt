@@ -43,7 +43,6 @@ class NotificationsActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        // Removed the notification click handler to keep the UI simple
         // Notifications will only be marked as read via the "Mark all as read" button
         notificationAdapter = NotificationAdapter(
             onNotificationClick = { /* No action on individual notification click */ }
@@ -93,17 +92,12 @@ class NotificationsActivity : AppCompatActivity() {
         }
     }
 
-    // Removed individual notification marking functionality
-    // Now notifications are only marked as read using the "Mark all as read" button
-
     private fun markAllNotificationsAsRead() {
         lifecycleScope.launch {
             try {
                 notificationRepository.markAllNotificationsAsRead()
                     .onSuccess {
                         loadNotifications()
-
-                        // הוספת קוד לשליחת תוצאה חזרה ל-Fragment
                         setResult(Activity.RESULT_OK)
 
                         Toast.makeText(

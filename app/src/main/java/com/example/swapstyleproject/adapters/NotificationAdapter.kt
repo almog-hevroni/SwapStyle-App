@@ -45,16 +45,12 @@ class NotificationAdapter(
             notificationTime.text = formatTimestamp(notification.timestamp)
 
             if (notification.isRead) {
-                // התראה שנקראה - הסתר את האינדיקטור האדום
                 unreadIndicator.visibility = View.GONE
 
-                // רקע לבן להתראות שנקראו
                 cardView.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.white))
             } else {
-                // התראה שלא נקראה - הצג את האינדיקטור האדום
                 unreadIndicator.visibility = View.VISIBLE
 
-                // רקע אפור בהיר להתראות שלא נקראו
                 cardView.setCardBackgroundColor(ContextCompat.getColor(itemView.context, R.color.gray))
             }
 

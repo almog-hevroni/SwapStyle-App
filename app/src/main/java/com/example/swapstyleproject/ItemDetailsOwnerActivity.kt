@@ -23,6 +23,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.swapstyleproject.model.ItemStatus
 import com.example.swapstyleproject.utilities.AnimationHelper
@@ -214,14 +215,12 @@ class ItemDetailsOwnerActivity : AppCompatActivity() {
                                 binding.confirmSwapButton.isEnabled = true
                                 binding.confirmSwapButton.text = "Swap confirmation"
                             } else {
-                                // פריט לא זמין - מונע בחירה ומציג הודעה
                                 Toast.makeText(
                                     this@ItemDetailsOwnerActivity,
                                     "This item is no longer available for swap",
                                     Toast.LENGTH_SHORT
                                 ).show()
 
-                                // מסיר בחירה אם קיימת
                                 if (selectedOffer?.offeredItemId == offer.offeredItemId) {
                                     selectedOffer = null
                                     binding.confirmSwapButton.isEnabled = false
@@ -244,7 +243,6 @@ class ItemDetailsOwnerActivity : AppCompatActivity() {
     }
 
     private fun showConfirmationDialog(offer: SwapOffer) {
-        // בדיקה נוספת לפני הצגת דיאלוג האישור
         if (!offer.offeredItemId.isNullOrEmpty()) {
             lifecycleScope.launch {
                 try {
@@ -257,30 +255,24 @@ class ItemDetailsOwnerActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
 
-                                // מעדכן את הרשימה
                                 loadSwapOffers(offer.itemId)
                                 return@launch
                             }
 
-                            // ממשיך להצגת דיאלוג האישור
                             showActualConfirmationDialog(offer)
                         }
                         .onFailure {
-                            // במקרה של שגיאה בבדיקה, מניח שהפריט זמין
                             showActualConfirmationDialog(offer)
                         }
                 } catch (e: Exception) {
-                    // במקרה של שגיאה כללית, מניח שהפריט זמין
                     showActualConfirmationDialog(offer)
                 }
             }
         } else {
-            // אם אין פריט מוצע, ממשיך כרגיל
             showActualConfirmationDialog(offer)
         }
     }
 
-    // פונקציה שמראה את הדיאלוג בפועל (קוד שהיה לפני)
     private fun showActualConfirmationDialog(offer: SwapOffer) {
         lifecycleScope.launch {
             try {
@@ -305,6 +297,15 @@ class ItemDetailsOwnerActivity : AppCompatActivity() {
                             val titleView = dialog.findViewById<TextView>(androidx.appcompat.R.id.alertTitle)
                             titleView?.textAlignment = View.TEXT_ALIGNMENT_VIEW_START
                             titleView?.gravity = Gravity.START
+                            titleView?.layoutDirection = View.LAYOUT_DIRECTION_LTR
+                            titleView?.textDirection = View.TEXT_DIRECTION_LTR
+
+                            // Change button colors to match tool_bar_color
+                            val positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
+                            val negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE)
+
+                            positiveButton.setTextColor(ContextCompat.getColor(this@ItemDetailsOwnerActivity, R.color.tool_bar_color))
+                            negativeButton.setTextColor(ContextCompat.getColor(this@ItemDetailsOwnerActivity, R.color.tool_bar_color))
                         }
 
                         dialog.show()
@@ -402,5 +403,12 @@ class ItemDetailsOwnerActivity : AppCompatActivity() {
             "$message: ${throwable.message}"
         }
         Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Refresh data when returning to the activity
+        val itemId = intent.getStringExtra("itemId") ?: return
+        loadSwapOffers(itemId)
     }
 }
