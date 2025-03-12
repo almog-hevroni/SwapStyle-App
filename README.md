@@ -70,6 +70,11 @@ This application leverages **Firebase Authentication, Firestore Database, and Fi
   <img src="photos/login_screen.png" alt="Login Screen" width="250">
 </p>
 
+### 📝 Register Screen
+<p align="center">  
+  <img src="photos/register_screen.png" alt="Register Screen" width="250">  
+</p>
+
 ### 🏠 Home Screen
 <table>
   <tr>
